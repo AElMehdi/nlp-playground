@@ -3,8 +3,8 @@ RECIPE = "Place the cayenne, black pepper, paprika, ginger, turmeric and cinnamo
          "overnight in the fridge"
 
 
-def process(recipe):
-    print(recipe)
+def process(recipe) -> str:
+    return "Gotchya!"
 
 
 if __name__ == '__main__':
