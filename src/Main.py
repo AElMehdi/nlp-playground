@@ -7,9 +7,11 @@ RECIPE = """Place the cayenne, black pepper, paprika, ginger, turmeric and cinna
 
 
 def process(recipe) -> []:
-    noiseWords = set(stopwords.words('english'))
-    tokenizedRecipe = nltk.word_tokenize(recipe)
-    result = [word for word in tokenizedRecipe if word not in noiseWords]
+    noise_words = set(stopwords.words('english'))
+    tokenized_recipe = nltk.word_tokenize(recipe)
+    result = [word.lower() for word in tokenized_recipe
+              if word not in noise_words
+              and word.isalpha()]
     return result[:3]
 
 
